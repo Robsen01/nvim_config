@@ -46,3 +46,5 @@ opt.colorcolumn = "80"
 vim.g.mapleader = " "
 
 opt.iskeyword:append("-")
+vim.g.nvim_tree_respect_buf_cwd = 1
+

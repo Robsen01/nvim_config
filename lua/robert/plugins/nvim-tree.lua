@@ -10,6 +10,10 @@ require("nvim-tree").setup({
   view = {
     width = 30,
   },
+  update_focused_file = {
+    enable = true,
+    update_cwd = true,
+  },
   renderer = {
     group_empty = true,
   },
@@ -17,3 +21,4 @@ require("nvim-tree").setup({
     dotfiles = true,
   },
 })
+
