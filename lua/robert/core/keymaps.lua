@@ -52,6 +52,9 @@ vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
+vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
+vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
+
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>");
@@ -67,6 +70,13 @@ vim.keymap.set("n", "<leader>]", 'ciw[<C-r>"]<ESC>)', { noremap = true})
 vim.keymap.set("n", "<leader>}", 'ciw{<C-r>"}<ESC>)', { noremap = true})
 
 vim.keymap.set("n", "<leader>o", "<cmd>NvimTreeToggle<CR>", { noremap = true})
+
+vim.keymap.set('n', '<leader>b', "<cmd> lua require('dap').toggle_breakpoint()<CR>")
+vim.keymap.set('n', '<leader>c', "<cmd> lua require('dap').continue()<CR>")
+
+vim.keymap.set('n', '<leader>gd', "<cmg> lua vim.lsp.buf.definition()<CR>")
+
+vim.keymap.set('n', '<leader>db', '<cmd> DBUIToggle<CR>');
 
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")

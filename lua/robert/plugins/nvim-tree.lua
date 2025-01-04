@@ -10,6 +10,23 @@ require("nvim-tree").setup({
   view = {
     width = 30,
   },
+  highlights = {
+      background = {
+        guibg = "NONE",
+      },
+      fill = {
+          guibg = "NONE",
+      },
+      close_button = {
+          guibg = "NONE",
+      },
+      seperator_visible = {
+          guibg = "NONE",
+      },
+      tab_close = {
+          guibg = "NONE",
+      },
+  },
   update_focused_file = {
     enable = true,
     update_cwd = true,

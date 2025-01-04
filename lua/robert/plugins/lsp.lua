@@ -1,4 +1,3 @@
-
 vim.api.nvim_create_autocmd("FileType", {
     pattern = {"markdown", "text"},
     callback = function()
@@ -9,8 +8,8 @@ vim.api.nvim_create_autocmd("FileType", {
 
 require("mason").setup()
 require("mason-lspconfig").setup{
-    ensure_installed = { "lua_ls", "rust_analyzer", "clangd", "cmake", "ast_grep", "biome",
-    "lua_ls", "jedi_language_server", "rust_analyzer", "esbonio", "zls" 
+    ensure_installed = { "lua_ls", "rust_analyzer", "clangd", "jedi-language-server", "pyright",
+    "lua_ls", "rust_analyzer", "zls"
     },
 }
 -- After setting up mason-lspconfig you may set up servers via lspconfig
