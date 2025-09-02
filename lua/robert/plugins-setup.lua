@@ -28,12 +28,12 @@ local plugins = {
     tag = '0.1.5',
     requires = { {'nvim-lua/plenary.nvim'} }
    },
-   --{
-   -- "rose-pine/neovim",
-   -- as = "rose-pine",
-   -- variant="moon",
-   -- dark_variant="moon"
-   -- },
+   {
+    "rose-pine/neovim",
+    as = "rose-pine",
+    --variant="moon",
+    --dark_variant="moon"
+    },
    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
    {
     'nvim-treesitter/nvim-treesitter',
@@ -101,17 +101,17 @@ local plugins = {
     "mfussenegger/nvim-dap",
     "mfussenegger/nvim-dap-python",
     { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} },
-    {
-    "folke/noice.nvim",
-    opts = {
-        notify = {
-            enabled = true,
-        },
-    },
-    dependencies = {
-        "MunifTanjim/nui.nvim"
-    },
-    },
+    --{
+    --"folke/noice.nvim",
+    --opts = {
+    --    notify = {
+    --        enabled = true,
+    --    },
+    --},
+    --dependencies = {
+    --    "MunifTanjim/nui.nvim"
+    --},
+    --},
     {
     "ossmos/analyzer4d.nvim"},
 }

@@ -7,7 +7,7 @@ require("obsidian").setup({
     -- },
     {
       name = "Obsidian Vault",
-      path = "/Users/robert/Documents/Obsidian Vault",
+      path = "/home/robert/Obsidian",
     },
   },
   completion = {

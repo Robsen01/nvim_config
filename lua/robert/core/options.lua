@@ -1,6 +1,7 @@
 local opt = vim.opt -- conciseness
 
-opt.guicursor = ""
+opt.shell = "/usr/bin/nu"
+opt.guicursor = "n-v-c:block,i-ci-ve:ver25-blinkwait700-blinkoff400-blinkon250,r-cr-o:hor20"
 opt.relativenumber = true
 opt.number = true
 
