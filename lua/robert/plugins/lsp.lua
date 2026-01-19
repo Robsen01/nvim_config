@@ -8,7 +8,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 require("mason").setup()
 require("mason-lspconfig").setup{
-    ensure_installed = { "lua_ls", "rust_analyzer", "clangd", "pyright",
+    ensure_installed = { "lua_ls", "rust_analyzer", "clangd", "basedpyright",
     "lua_ls", "zls"
     },
 }
@@ -55,5 +55,4 @@ require('mason-lspconfig').setup_handlers({
   end,
 })
 
-require('lspconfig').tsserver.setup{}
 
