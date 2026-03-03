@@ -8,14 +8,8 @@ vim.api.nvim_create_autocmd("FileType", {
 
 require("mason").setup()
 require("mason-lspconfig").setup{
-    ensure_installed = { "lua_ls", "rust_analyzer", "clangd", "basedpyright",
-    "lua_ls", "zls"
-    },
+    ensure_installed = { "lua_ls", "rust_analyzer", "clangd", "basedpyright", "zls" },
 }
--- After setting up mason-lspconfig you may set up servers via lspconfig
--- require("lspconfig").lua_ls.setup {}
--- require("lspconfig").rust_analyzer.setup {}
--- ...
 
 local cmp = require('cmp')
 cmp.setup({
@@ -46,13 +40,12 @@ capabilities.textDocument.publishDiagnostics = {
     underline = true,
 }
 
-require('mason-lspconfig').setup_handlers({
-  function(server_name)
-    require('lspconfig')[server_name].setup {
-      capabilities = capabilities,
-    }
-    require('lspconfig')[server_name].setup{}
-  end,
-})
+-- mason-lspconfig v2 uses vim.lsp.config() instead of setup_handlers
+local servers = { "lua_ls", "rust_analyzer", "clangd", "basedpyright", "zls" }
+for _, server_name in ipairs(servers) do
+    vim.lsp.config(server_name, {
+        capabilities = capabilities,
+    })
+end
 
 

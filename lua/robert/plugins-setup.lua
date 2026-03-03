@@ -12,7 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-   'nvim-treesitter/playground',
+   -- 'nvim-treesitter/playground', -- Deprecated (Jan 2024). Use :InspectTree, :Inspect, :EditQuery instead
    "nvim-lua/plenary.nvim",
    {'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons', opt = true }
@@ -31,13 +31,21 @@ local plugins = {
    {
     "rose-pine/neovim",
     as = "rose-pine",
-    --variant="moon",
-    --dark_variant="moon"
+    variant="moon",
+    dark_variant="moon",
     },
-   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+   -- { "catppuccin/nvim", name = "catppuccin", priority = 1000,
+   --    opts = {
+   --      transparent_background = true,
+   --    }
+   --  },
    {
     'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
+    branch = 'master',  -- Use old API; main branch is incompatible rewrite
+    build = ':TSUpdate',
+    config = function()
+      require('robert.plugins.treesitter')
+    end,
    },
    'mbbill/undotree',
    'ThePrimeagen/vim-be-good',

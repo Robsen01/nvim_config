@@ -4,7 +4,7 @@ require("robert.core.keymaps")
 require("robert.core.colorscheme")
 require("robert.plugins.lsp")
 require("robert.plugins.telescope")
-require("robert.plugins.treesitter")
+-- treesitter config runs via nvim-treesitter's config in plugins-setup
 require("robert.plugins.undotree")
 require("robert.plugins.harpoon")
 --require("robert.plugins.obsidian")
